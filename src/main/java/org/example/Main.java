@@ -1,6 +1,5 @@
 package org.example;
 
-import com.sun.source.tree.Tree;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +10,15 @@ public class Main {
 //        }
 //    }).start();
 
-        new Thread(() -> System.out.println("Hello World")).start();
+//        new Thread(() -> System.out.println("Hello World")).start();
+
+        Director director = new Director();
+        String result = director.force((int n) -> {
+            for (int i = 0; i < n; i++) {
+                System.out.print("Working...");
+            }
+            return "Success";
+        }, 5);
+        System.out.println(result);
     }
 }
